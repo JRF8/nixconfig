@@ -11,6 +11,7 @@
       ./services.nix
       ./users.nix
       ./programs.nix
+      ./fonts.nix
     ];
 
   # Allow Unfree Packages 
