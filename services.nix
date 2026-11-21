@@ -11,8 +11,21 @@
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.epson-escpr2 ];
+  };
+  
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  
+  # only needed if connecting over USB
+  services.ipp-usb.enable = true;
+
 
   # Enable sound.
   # services.pulseaudio.enable = true;
