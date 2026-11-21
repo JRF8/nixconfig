@@ -7,8 +7,17 @@
     nixosConfigurations.thinkp71 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
-      ./configuration.nix
-      /etc/nixos/hardware-configuration.nix
+      ./common/configuration.nix
+      ./hosts/thinkp71/hardware-configuration.nix
+      ./hosts/thinkp71/hostname.nix
+      ./hosts/thinkp71/nvidia.nix
+       ];
+    };
+    nixosConfigurations.x1carbon = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [ 
+      ./common/configuration.nix
+      ./hosts/x1carbon/hostname.nix
        ];
     };
   };
