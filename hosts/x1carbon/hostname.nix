@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  networking.hostName = "thinkp71"; # Define your hostname.
+  networking.hostName = "x1carbon"; # Define your hostname.
 }
