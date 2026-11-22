@@ -17,6 +17,7 @@
       system = "x86_64-linux";
       modules = [ 
       ./common/configuration.nix
+      ./hosts/x1carbon/hardware-configuration.nix
       ./hosts/x1carbon/hostname.nix
        ];
     };
