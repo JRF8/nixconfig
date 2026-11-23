@@ -1,7 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  # Set up hyprland and sddm
+
+  # System packages
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    # some LSP stuff for neovim
+    nixd
+    nixfmt
+    lua-language-server
+    stylua
+    ripgrep
+    fd
+    gcc
+    tree-sitter
+  ];
 
   # Enable Hyprland
   programs.hyprland = {
@@ -10,22 +23,21 @@
     xwayland.enable = true;
   };
 
-
   # Set up dux-shell
   programs.dms-shell = {
-	enable = true;
+    enable = true;
 
-	systemd = {
-		enable = true; # Systemd service for auto-start
-		restartIfChanged = true; # Auto-restart dms.service when dms-shell changes
-	};
+    systemd = {
+      enable = true; # Systemd service for auto-start
+      restartIfChanged = true; # Auto-restart dms.service when dms-shell changes
+    };
 
     # Core features
-    enableSystemMonitoring = true;     # System monitoring widgets
-    enableVPN = true;                  # VPN management widget
-    enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
-    enableAudioWavelength = true;      # Audio visualizer (cava)
-   enableCalendarEvents = true;       # Calendar integration (khal)
+    enableSystemMonitoring = true; # System monitoring widgets
+    enableVPN = true; # VPN management widget
+    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true; # Audio visualizer (cava)
+    enableCalendarEvents = true; # Calendar integration (khal)
   };
 
   programs.firefox.enable = true;
@@ -47,16 +59,6 @@
     viAlias = true;
     vimAlias = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    nixd
-    nixfmt
-    lua-language-server
-    stylua
-    ripgrep fd
-    gcc tree-sitter
-  ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

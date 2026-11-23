@@ -22,6 +22,7 @@
       spotify
       discord
       fastfetch
+      cava
     ];
   };
 }
