@@ -5,6 +5,7 @@
   # System packages
   environment.systemPackages = with pkgs; [
     brightnessctl
+    pulseaudio
     # some LSP stuff for neovim
     nixd
     nixfmt
