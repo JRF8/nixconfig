@@ -40,6 +40,23 @@
     };
   };
 
+  # Neovim setup and LSP
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    nixd
+    nixfmt
+    lua-language-server
+    stylua
+    ripgrep fd
+    gcc tree-sitter
+  ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
