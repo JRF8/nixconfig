@@ -40,7 +40,7 @@
     options = [ "subvol=@home" ];
   };
 
-  fileSystems."/home/jesse/nixconfig" = {
+  fileSystems."/home/jesse/.config/nixconfig" = {
     device = "/dev/disk/by-uuid/91e8b000-ba8f-483a-beef-e5421791cab9";
     fsType = "btrfs";
     options = [ "subvol=@nixos-config" ];
