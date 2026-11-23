@@ -23,6 +23,7 @@
       discord
       fastfetch
       cava
+      mpv
     ];
   };
 }
