@@ -7,6 +7,8 @@
     brightnessctl
     pulseaudio
     playerctl
+    # some icon theming
+    papirus-icon-theme
     # some LSP stuff for neovim
     nixd
     nixfmt
