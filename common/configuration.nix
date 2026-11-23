@@ -2,23 +2,24 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./services.nix
-      ./users.nix
-      ./programs.nix
-      ./fonts.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./services.nix
+    ./users.nix
+    ./programs.nix
+    ./fonts.nix
+  ];
 
-  # Allow Unfree Packages 
+  # Allow Unfree Packages
   nixpkgs.config.allowUnfree = true;
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -38,20 +39,17 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-
-
   # Required portals and components for Hyprland
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   };
 
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-   environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   ];
+  environment.systemPackages = with pkgs; [
+    #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  ];
 
   # Allow rofi to find my applications
   environment.sessionVariables = {
@@ -93,7 +91,8 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
 
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
-
