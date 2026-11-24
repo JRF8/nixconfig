@@ -16,6 +16,7 @@
     ./users.nix
     ./programs.nix
     ./fonts.nix
+    ./home-manager.nix
   ];
 
   # Allow Unfree Packages
