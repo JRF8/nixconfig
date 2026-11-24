@@ -9,7 +9,6 @@
       tree
       tmux
       rofi
-      alacritty
       ripgrep
       htop
       btop
