@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   home.username = "jesse";
   home.homeDirectory = "/home/jesse";
@@ -13,5 +13,8 @@
       window.opacity = 0.9;
     };
   };
+
+  # hyprland
+  xdg.configFile."hypr".source = inputs.hypr;
 
 }

@@ -52,6 +52,22 @@
         "type": "github"
       }
     },
+    "hypr": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795558835,
+        "narHash": "sha256-58QpAI2+w80l/SX5NKIVeKCOJehwV/eaKxWrsTmLndk=",
+        "owner": "jrf8",
+        "repo": "hypr",
+        "rev": "84e47e0ee0659e3acbf424a11ac085575f1e491d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jrf8",
+        "repo": "hypr",
+        "type": "github"
+      }
+    },
     "lanzaboote": {
       "inputs": {
         "crane": "crane",
@@ -117,6 +133,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "hypr": "hypr",
         "lanzaboote": "lanzaboote",
         "nixpkgs": "nixpkgs"
       }
