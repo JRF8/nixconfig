@@ -4,28 +4,23 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
-  
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
 
   services.printing = {
     enable = true;
     drivers = [ pkgs.epson-escpr2 ];
   };
-  
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
   };
-  
+
   # only needed if connecting over USB
   services.ipp-usb.enable = true;
-
 
   # Enable sound.
   # services.pulseaudio.enable = true;
@@ -42,8 +37,9 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+    package = pkgs.kdePackages.sddm;
+    theme = "catppuccin-mocha-mauve";
   };
-
 
   # List services that you want to enable:
   services.upower.enable = true;

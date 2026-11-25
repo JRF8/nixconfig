@@ -7,6 +7,15 @@
     brightnessctl
     pulseaudio
     playerctl
+    # SDDM theme
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha"; # latte | frappe | macchiato | mocha
+      accent = "mauve";
+      font = "Noto Sans";
+      fontSize = "9";
+      # background = "${../wallpapers/login.png}";   # optional, path must be tracked in git
+      # loginBackground = true;                      # optional, backdrop behind the login box
+    })
     # some icon theming
     papirus-icon-theme
     # some LSP stuff for neovim
