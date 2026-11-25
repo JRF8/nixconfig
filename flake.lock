@@ -55,11 +55,11 @@
     "hypr": {
       "flake": false,
       "locked": {
-        "lastModified": 1795558835,
-        "narHash": "sha256-58QpAI2+w80l/SX5NKIVeKCOJehwV/eaKxWrsTmLndk=",
+        "lastModified": 1795565535,
+        "narHash": "sha256-obGSsnIrMZ7P2hwmx53pCOUR/IQw9CgVe0DBbpIPpgo=",
         "owner": "jrf8",
         "repo": "hypr",
-        "rev": "84e47e0ee0659e3acbf424a11ac085575f1e491d",
+        "rev": "b2fae10ac092feaef503a3384d7d295bebdc9d85",
         "type": "github"
       },
       "original": {
