@@ -24,6 +24,7 @@
       fastfetch
       cava
       mpv
+      thunderbird
     ];
   };
 }
