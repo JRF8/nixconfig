@@ -25,6 +25,7 @@
       cava
       mpv
       thunderbird
+      calibre
     ];
   };
 }
