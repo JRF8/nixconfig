@@ -10,9 +10,16 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # my hyprland configuration
     hypr = {
       url = "github:jrf8/hypr";
       flake = false;
+    };
+    # actual hyprland url
+    hyprland.url = "github:hyprwm/Hyprland/v0.57.2";
+    hymission = {
+      url = "github:gfhdhytghd/hymission";
+      inputs.hyprland.follows = "hyprland";
     };
   };
   outputs =

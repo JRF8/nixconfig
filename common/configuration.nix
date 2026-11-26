@@ -43,7 +43,6 @@
   # Required portals and components for Hyprland
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   };
 
   # List packages installed in system profile.

@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
+let
+  hyprPkgs = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
-
   # System packages
   environment.systemPackages = with pkgs; [
     brightnessctl
@@ -16,6 +18,8 @@
       # background = "${../wallpapers/login.png}";   # optional, path must be tracked in git
       # loginBackground = true;                      # optional, backdrop behind the login box
     })
+    # hymission
+    inputs.hymission.packages.${pkgs.stdenv.hostPlatform.system}.default
     # some icon theming
     papirus-icon-theme
     # some LSP stuff for neovim
@@ -34,6 +38,13 @@
     enable = true;
     withUWSM = true; # Recommended for systemd integration
     xwayland.enable = true;
+    package = hyprPkgs.hyprland;
+    portalPackage = hyprPkgs.xdg-desktop-portal-hyprland;
+  };
+
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
   # Set up dux-shell
