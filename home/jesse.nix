@@ -15,7 +15,10 @@
   };
 
   # hyprland
-  xdg.configFile."hypr".source = inputs.hypr;
+  xdg.configFile."hypr" = {
+    source = inputs.hypr;
+    recursive = true; # # this will make new files writeable in ~/.config/hypr
+  };
 
   # zsh
   programs.zsh = {
